@@ -17,7 +17,7 @@ Java 17, IntelliJ IDE, Maven, Testng, RestAssured, Selenium, Allure, TypeSfe Con
 * Make sure that lombok annotations are enabled. if not you can just enable it after the first (a popup that asks you to enable the lombok annotation will appear).
 
 ### How to run
-* your credentials to src/main/resources/application.conf file. [email, password, apiKey, apiToken]
+* Add your credentials to src/main/resources/application.conf file. [email, password, apiKey, apiToken]
 * Open testng.xml file and run the Tests. (if you want to skip one of the tests you can simply comment it).
 * For some test cases like create a list , you have 2 options:
   1- add a parameter of the board id.
