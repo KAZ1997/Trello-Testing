@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Trello Suite" verbose="1" >
+
+    <test name="UI Test: Create Board By UI" parallel="methods" thread-count="1">
+        <classes> <class name="com.trello.testing.testCases.UITests.CreateBoardByUI"/> </classes>
+    </test>
+
+    <test name="UI Test: Create List By UI" parallel="methods" thread-count="1">
+        <parameter name="urlBoardToCreateList" value=""/>
+        <classes> <class name="com.trello.testing.testCases.UITests.CreateListByUI"/> </classes>
+    </test>
+
+    <test name="UI Test: Update Card By UI" parallel="methods" thread-count="1">
+        <parameter name="urlCardToBeUpdated" value=""/>
+        <parameter name="cardTitleToBeUpdated" value=""/>
+        <parameter name="cardDescriptionToBeUpdated" value=""/>
+        <classes> <class name="com.trello.testing.testCases.UITests.UpdateCardByUI"/> </classes>
+    </test>
+
+    <test name="API Test: Create List By API" parallel="methods" thread-count="1">
+        <parameter name="idBoardToCreateList" value=""/>
+        <groups> <run> <exclude name="uiTests"/> </run> </groups>
+        <classes> <class name="com.trello.testing.testCases.APITests.CreateListByAPI"/> </classes>
+    </test>
+
+    <test name="API Test: Delete Board By API" parallel="methods" thread-count="1">
+        <parameter name="idBoardToBeDeleted" value=""/>
+        <groups> <run> <exclude name="uiTests"/> </run> </groups>
+        <classes> <class name="com.trello.testing.testCases.APITests.DeleteBoardByAPI"/> </classes>
+    </test>
+
+    <test name="API Tests" parallel="methods" thread-count="1">
+        <groups> <run> <exclude name="uiTests"/> </run> </groups>
+        <classes>
+            <class name="com.trello.testing.testCases.APITests.CreateBoardByAPI"/>
+            <class name="com.trello.testing.testCases.APITests.DeleteAllBoardsByAPI"/>
+        </classes>
+    </test>
+
+    <test name="API Test: Update Card By API" parallel="methods" thread-count="1">
+        <parameter name="idCardToBeUpdated" value=""/>
+        <parameter name="cardTitleToBeUpdated" value=""/>
+        <parameter name="cardDescriptionToBeUpdated" value=""/>
+        <groups> <run> <exclude name="uiTests"/> </run> </groups>
+        <classes> <class name="com.trello.testing.testCases.APITests.UpdateCardByAPI"/> </classes>
+    </test>
+
+    <test name="API Test: Move Card By API" parallel="methods" thread-count="1">
+        <parameter name="idCardToBeMoved" value=""/>
+        <parameter name="newIdListForCard" value=""/>
+        <groups> <run> <exclude name="uiTests"/> </run> </groups>
+        <classes> <class name="com.trello.testing.testCases.APITests.MoveCardByAPI"/> </classes>
+    </test>
+
+    <test name="API Test: Create Card By API" parallel="methods" thread-count="1">
+        <parameter name="idList" value=""/>
+        <groups> <run> <exclude name="uiTests"/> </run> </groups>
+        <classes> <class name="com.trello.testing.testCases.APITests.CreateCardByAPI"/> </classes>
+    </test>
+
+    <test name="Combined Tests" parallel="methods" thread-count="1">
+        <classes>
+            <class name="com.trello.testing.testCases.CombinedTests.CreateBoardByAPI_VerifyByUI"/>
+            <class name="com.trello.testing.testCases.CombinedTests.CreateBoardByUI_VerifyByAPI"/>
+        </classes>
+    </test>
+
+    <test name="Combined Test: Update Card" parallel="methods" thread-count="1">
+        <parameter name="cardTitleToBeUpdated" value=""/>
+        <parameter name="cardDescriptionToBeUpdated" value=""/>
+        <parameter name="idCardToBeUpdated" value=""/>
+        <classes>
+            <class name="com.trello.testing.testCases.CombinedTests.UpdateCardByAPI_VerifyByUI"/>
+        </classes>
+    </test>
+
+    <test name="Combined Test: Create Card By API" parallel="methods" thread-count="1">
+        <parameter name="idList" value=""/>
+        <classes> <class name="com.trello.testing.testCases.CombinedTests.CreateCardByAPI_VerifyByUI"/> </classes>
+    </test>
+
+</suite>
+
+
+
