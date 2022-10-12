@@ -23,7 +23,7 @@ public class CreateListByUI extends BaseTest {
     @Parameters("urlBoardToCreateList")
     @Description("Create list using selenium web driver")
     @Test(description = "Create list")
-    public void createNewList(@Optional("") String urlBoard) {
+    public void createNewList(@Optional("") String urlBoard){
         /**
          * check if the parameters are provided or need to generate new one
          */

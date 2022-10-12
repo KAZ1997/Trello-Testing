@@ -9,7 +9,7 @@ import static com.trello.testing.testData.TestDataGenerator.nameGenerator;
 public class BoardPage extends BasePage {
     public BoardPage(WebDriver driver) {super(driver);}
 
-    private final By boardViewsButton = By.xpath("//button[@title='Board views']");
+    private final By shareBoardButton = By.xpath("//button[@title='Share board']");
     private final By lists = By.xpath("(//div[@class='js-list list-wrapper'])");
     private final By listTitleInput = By.xpath("//input[@placeholder='Enter list title…']");
     private final By createListButton = By.xpath("//span[@class='placeholder']");
@@ -22,7 +22,7 @@ public class BoardPage extends BasePage {
     private final By cardDescription = By.cssSelector("p[dir='auto']");
     private final By boardTitle = By.cssSelector(".js-board-editing-target.board-header-btn-text");
     public BoardPage waitForPageToBeLoaded() {
-        waitToBeClickable(boardViewsButton);
+        waitToBeClickable(shareBoardButton);
         return this;
     }
 

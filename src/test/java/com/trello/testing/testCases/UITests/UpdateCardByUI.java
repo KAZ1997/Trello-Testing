@@ -27,7 +27,7 @@ public class UpdateCardByUI extends BaseTest {
     @Parameters({"urlCardToBeUpdated","cardTitleToBeUpdated", "cardDescriptionToBeUpdated"})
     @Description("update card using selenium web driver")
     @Test(description = "update card by UI")
-    public void update(@Optional("") String urlCard, @Optional("")  String title, @Optional("")  String description) {
+    public void update(@Optional("") String urlCard, @Optional("")  String title, @Optional("")  String description){
 
         /**
          * check if the parameters are provided or need to generate new one
